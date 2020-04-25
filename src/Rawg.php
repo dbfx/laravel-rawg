@@ -202,7 +202,7 @@ class Rawg
         }
 
         // Find and return the key
-        return array_get($obj, $needle, null);
+        return Arr::get($obj, $needle, null);
     }
 
     /*
