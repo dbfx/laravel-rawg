@@ -2,6 +2,8 @@
 
 namespace Rawg;
 
+use Illuminate\Support\Arr;
+
 /**
  * Collection of methods that perform a RESTful request to RAWG
  *
@@ -129,7 +131,7 @@ class Rawg
      */
     public function setParamByKey(string $key, $value)
     {
-        array_set($this->params, $key, $value);
+        Arr::set($this->params, $key, $value);
 
         return $this;
     }
@@ -143,7 +145,7 @@ class Rawg
     public function getParamByKey(string $key)
     {
         if (array_key_exists($key, array_dot($this->params))) {
-            return array_get($this->params, $key);
+            return Arr::get($this->params, $key);
         }
     }
 
